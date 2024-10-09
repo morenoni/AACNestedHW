@@ -197,12 +197,11 @@ public class AssociativeArray<K, V> {
    * Get all keys in the associative array.
    * @return an array of all keys
    */
-  @SuppressWarnings("unchecked")
-  public K[] keys() {
-    // Create an array for the keys
-    K[] keyArray = (K[]) new Object[size]; 
+
+  public String[] keys() {
+    String[] keyArray = new String[size];  
     for (int i = 0; i < size; i++) {
-      keyArray[i] = pairs[i].key;
+      keyArray[i] = (String) pairs[i].key;  
     }
     return keyArray;
   }

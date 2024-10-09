@@ -1,21 +1,28 @@
+import edu.grinnell.csc207.util.AssociativeArray;
+import edu.grinnell.csc207.util.KeyNotFoundException;
+import edu.grinnell.csc207.util.NullKeyException;
 import java.util.NoSuchElementException;
+
 
 /**
  * Represents the mappings for a single category of items that should
  * be displayed
  * 
- * @author Catie Baker & YOUR NAME HERE
+ * @author Catie Baker & Nicole Moreno Gonzalez. 
  *
  */
 public class AACCategory implements AACPage {
 
-	
+  private String categoryName; 
+  private AssociativeArray<String, String> items;
+
 	/**
 	 * Creates a new empty category with the given name
 	 * @param name the name of the category
 	 */
 	public AACCategory(String name) {
-
+    this.categoryName = name;
+    this.items = new AssociativeArray<>();
 	}
 	
 	/**
@@ -24,7 +31,11 @@ public class AACCategory implements AACPage {
 	 * @param text the text that image should speak
 	 */
 	public void addItem(String imageLoc, String text) {
-
+    try {
+      items.set(imageLoc, text); 
+    } catch (NullKeyException e) {
+      System.err.println("Error: Image location cannot be null.");
+    }
 	}
 
 	/**
@@ -33,7 +44,7 @@ public class AACCategory implements AACPage {
 	 * it should return an empty array
 	 */
 	public String[] getImageLocs() {
-		return null;
+    return items.keys();
 	}
 
 	/**
@@ -41,7 +52,7 @@ public class AACCategory implements AACPage {
 	 * @return the name of the category
 	 */
 	public String getCategory() {
-		return "";
+		return this.categoryName;
 	}
 
 	/**
@@ -52,7 +63,11 @@ public class AACCategory implements AACPage {
 	 * 		   category
 	 */
 	public String select(String imageLoc) {
-		return "";
+    try {
+      return items.get(imageLoc); 
+    } catch (KeyNotFoundException e) {
+      throw new NoSuchElementException("Image not found: " + imageLoc);
+    }
 	}
 
 	/**
@@ -61,6 +76,10 @@ public class AACCategory implements AACPage {
 	 * @return true if it is in the category, false otherwise
 	 */
 	public boolean hasImage(String imageLoc) {
-		return false;
+		return items.hasKey(imageLoc);
 	}
+
+  public String getCurrentCategory() {
+    return getCategory();
+  }
 }
