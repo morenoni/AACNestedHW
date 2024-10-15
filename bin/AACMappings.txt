@@ -1,0 +1,17 @@
+img/food/plate.png food
+>img/food/icons8-french-fries-96.png french fries
+>img/food/icons8-watermelon-96.png watermelon
+>img/food/icons8-apple-96.png apple
+>img/food/icons8-cookies-96.png cookies
+>img/food/icons8-strawberry-96.png strawberry
+>img/food/icons8-pizza-96.png pizza
+>img/food/icons8-hamburger-96.png hamburger
+img/clothing/hanger.png clothing
+>img/clothing/collaredshirt.png collared shirt
+>img/clothing/sweater.png sweater
+>img/clothing/skirt.png skirt
+>img/clothing/rainboots.png rain boots
+>img/clothing/cap.png ball cap
+>img/clothing/swimsuit.png swim suit
+>img/clothing/tshirt.png t shirt
+>img/clothing/flipflops.png flip flops
