@@ -17,7 +17,7 @@ This project models a simple augmentative and alternative communication (AAC) de
 
 Citations:
 
-How to use try-catch with resouces statements (for AACMappings):
+How to use try-catch with resource statements (for AACMappings):
 https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html
 
 ---
